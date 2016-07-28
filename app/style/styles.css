@@ -1,0 +1,51 @@
+
+
+#jumbo {
+  margin-top: 5%;
+  background-color: #D9EDF7;
+  color: #60708F;
+}
+
+#leftContain,
+#rightContain {
+  margin-top: 2%;
+}
+
+#leftContain {
+  padding-left: 0;
+}
+
+#rightContain {
+  padding-right: 0;
+}
+
+
+.top {
+  padding-top: 15px;
+  padding-bottom: 0px;
+}
+
+.titles {
+  font-weight: 900;
+}
+
+.datas {
+  font-weight: 900;
+  color: #316E32;
+  font-size: 1.25em;
+}
+
+.titles2 {
+  font-weight: 900;
+  padding-top: 50px;
+}
+
+.cityDisplay,
+{
+  font-weight: 900;
+}
+
+.latDisplay {
+  font-weight: 700;
+}
+

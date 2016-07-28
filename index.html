@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+  <!-- endbower -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/app/style/styles.css">
+  <!-- endinject -->
+</head>
+
+<body ng-controller="MainController as vm">
+  <div class="container">
+    <div id="jumbo" class="jumbotron">
+      <div class="container">
+        <h1>Origin Weather App</h1>
+        <p>Always know if you need an umbrella</p>
+      </div>
+    </div>
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-primary" ng-click="newWeather('sandiego')">San Diego</button>
+      <button type="button" class="btn btn-primary" ng-click="newWeather('newyork')">New York</button>
+      <button type="button" class="btn btn-primary" ng-click="newWeather('washingtondc')">Washington D.C.</button>
+      <button type="button" class="btn btn-primary" ng-click="newWeather('london')">London</button>
+      <button type="button" class="btn btn-primary" ng-click="newWeather('tokyo')">Tokyo</button>
+    </div>
+    <div class="input-group">
+      <input type="text" class="form-control" ng-model="cityName" placeholder="Search for...">
+      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="format()">Go!</button>
+                      </span>
+    </div>
+    <div id="leftContain" class="col-md-6">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">City Information</h3>
+        </div>
+        <div class="panel-body text-center">
+          <div class="row">
+            <div class="col-md-12 cityDisplay">
+              <h2><img src="http://openweathermap.org/img/w/{{vm.weather.weather[0].icon}}.png" alt="{{vm.weather.weather[0].description}}">{{vm.weather.name}}</h2></div>
+            <div class="col-md-12 latDisplay">Lat/Long: {{vm.weather.coord.lat}}, {{vm.weather.coord.lon}}</div>
+          </div>
+          <hr>
+          <div class="row bottom titles">
+            <div class="col-md-4">Temperature (°F)</div>
+            <div class="col-md-4">Pressure</div>
+            <div class="col-md-4">Humidity</div>
+          </div>
+          <div class="row bottom datas">
+            <div class="col-md-4">{{vm.weather.main.temp}}°F</div>
+            <div class="col-md-4">{{vm.weather.main.pressure}}</div>
+            <div class="col-md-4">{{vm.weather.main.humidity}}%</div>
+          </div>
+          <div class="row bottom titles titles2">
+            <div class="col-md-4">Lowest Temp (°F)</div>
+            <div class="col-md-4">Highest Temp (°F)</div>
+            <div class="col-md-4">Wind Speed</div>
+          </div>
+          <div class="row bottom datas">
+            <div class="col-md-4">{{vm.weather.main.temp_min}}°F</div>
+            <div class="col-md-4">{{vm.weather.main.temp_max}}°F</div>
+            <div class="col-md-4">{{vm.weather.wind.speed}}MPH</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="rightContain" class="col-md-6">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Search History</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover table-striped">
+            <tbody>
+              <tr ng-repeat="history in histories">
+                <td class="col-md-10">{{history.name}}</td>
+                <td class="col-md-2">{{history.time}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/toastr/toastr.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <!-- endbower -->
+  <!-- inject:js -->
+  <script src="/app/app.js"></script>
+  <script src="/app/controller.js"></script>
+  <script src="/app/factory.js"></script>
+  <!-- endinject -->
+</body>
+
+</html>

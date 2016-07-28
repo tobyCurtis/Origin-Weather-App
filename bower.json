@@ -1,0 +1,20 @@
+{
+  "name": "09-WeatherApp",
+  "homepage": "https://github.com/c-mac88/09-WeatherApp",
+  "description": "Weather App",
+  "main": "index.html",
+  "keywords": [
+    "Weather",
+    "App"
+  ],
+  "authors": [
+    "c-mac and Toby"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.5",
+    "toastr": "^2.1.2",
+    "moment": "momentjs#^2.13.0"
+  }
+}
